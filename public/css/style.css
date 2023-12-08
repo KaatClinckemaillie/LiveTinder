@@ -1,0 +1,111 @@
+html {
+    box-sizing: border-box;
+    /* background gradient */
+    background: linear-gradient(45deg, #fd297b, #ff5864, #ff655b);
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  main{
+    display: grid;
+    width: 45rem;
+    margin: auto;
+    grid-template: 
+      "select select select"
+      "myProfile canvas otherProfile";
+  }
+  section {
+    border-bottom: solid lightgray 1px;
+    padding: 2rem;
+  }
+  .profile {
+    width: 250px;
+    height: 80vh;
+    overflow: scroll;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 1rem;
+    display: block;
+    margin: auto;
+    background-color: white;
+
+  }
+  .tag {
+    border: solid lightgray 1px;
+    width: max-content;
+    padding: .2rem .5rem;
+    border-radius: 2rem;
+  }
+
+  .active {
+    background-color: lightpink;
+  }
+  input{
+    width: 100%;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    width: 50px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .input-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .blur {
+    -webkit-filter: blur(10px);
+  }
+
+  .peerSelect {
+    grid-area: select;
+    padding: 2rem;
+    margin: auto;
+  }
+
+  .myProfile {
+    grid-area: myProfile;
+  }
+
+  .otherProfile {
+    grid-area: otherProfile;
+  }
+
+  input{
+    border: none;
+    outline: none;
+  }
+
+  .input-icon > input {
+    margin-bottom: 0;
+  }
+
+  .name-age {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .age {
+    font-size: 1.2rem;
+    color: gray;
+    text-align: right;
+  }

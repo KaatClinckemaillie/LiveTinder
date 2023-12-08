@@ -1,0 +1,13 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.1",
+    "node-env": "^0.1.6",
+    "simple-peer": "^9.11.1",
+    "socket.io": "^4.5.2"
+  }
+}

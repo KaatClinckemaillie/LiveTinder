@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Live Tinder</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+  <body>
+    <main>
+      <div class="profile myProfile">
+        <video class="blur" id="myCamera" playsinline autoplay muted></video>
+        <section>
+          <div class="name-age">
+            <input class="name" type="text" placeholder="Naam" name="name"/>
+            <input class="age" type="text" placeholder="Age" name="age"/>
+          </div>
+          
+          <div class="input-icon">
+            <div class="icon"><img src="./assets/ruler.png" alt="" width="25px" /></div>
+            <input type="text" placeholder="Lengte" name="length"/>
+          </div>
+          <div class="input-icon">
+            <div class="icon"><img src="./assets/study.png" alt="" width="22px" /></div>
+  
+            <input type="text" placeholder="School" name="school"/>
+          </div>
+          <div class="input-icon">
+            <div class="icon"><img src="./assets/location.png" alt="" width="15px" /></div>
+            <input type="text" placeholder="Locatie" name="location"/>
+          </div>
+        </section>
+        <section>
+          <h2>Over mij</h2>
+          <input type="text" placeholder="Bio" name="bio">
+        </section>
+        <section>
+          <h2>Talen:</h2>
+          <div class="tags">
+            <div class="tag">Nederlands</div>
+            <div class="tag">Frans</div>
+            <div class="tag">Spaans</div>
+            <div class="tag">Engels</div>
+            <div class="tag">Arabisch</div>
+          </div>
+        </section>
+        <section>
+          <h2>Interesses:</h2>
+          <div class="tags">
+            <div class="tag">Sport</div>
+            <div class="tag">Theater</div>
+            <div class="tag">Kunst</div>
+            <div class="tag">...</div>
+          </div>
+        </section>
+        <section>
+          <h2>Meer over mij:</h2>
+          <div class="tags">
+            <div class="tag">Emphatisch</div>
+            <div class="tag">Creatief</div>
+            <div class="tag">Waterman</div>
+            <div class="tag">...</div>
+          </div>
+        </section>
+      </div>
+      <div class="peerSelect">
+        <label for="peerSelect">Peer: </label><select id="peerSelect"></select>
+      </div>
+      <div class="profile otherProfile">
+        <video class="blur" id="otherCamera" playsinline autoplay muted></video>
+        <section>
+          <input class="name" type="text" placeholder="Naam" name="name"/>
+          <div class="input-icon">
+            <div class="icon"><img src="./assets/ruler.png" alt="" width="25px" /></div>
+            <input type="text" placeholder="Lengte" name="length"/>
+          </div>
+          <div class="input-icon">
+            <div class="icon"><img src="./assets/study.png" alt="" width="22px" /></div>
+  
+            <input type="text" placeholder="School" name="school"/>
+          </div>
+          <div class="input-icon">
+            <div class="icon"><img src="./assets/location.png" alt="" width="15px" /></div>
+            <input type="text" placeholder="Locatie" name="location"/>
+          </div>
+        </section>
+        <section>
+          <h2>Over mij</h2>
+          <input type="text" placeholder="Bio" name="bio">
+        </section>
+        <section>
+          <h2>Talen:</h2>
+          <div class="tags">
+            <div class="tag">Nederlands</div>
+            <div class="tag">Frans</div>
+            <div class="tag">Spaans</div>
+            <div class="tag">Engels</div>
+            <div class="tag">Arabisch</div>
+          </div>
+        </section>
+        <section>
+          <h2>Interesses:</h2>
+          <div class="tags">
+            <div class="tag">Sport</div>
+            <div class="tag">Theater</div>
+            <div class="tag">Kunst</div>
+            <div class="tag">...</div>
+          </div>
+        </section>
+        <section>
+          <h2>Meer over mij:</h2>
+          <div class="tags">
+            <div class="tag">Emphatisch</div>
+            <div class="tag">Creatief</div>
+            <div class="tag">Waterman</div>
+            <div class="tag">...</div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js" integrity="sha512-0f7Ahsuvr+/P2btTY4mZIw9Vl23lS6LY/Y7amdkmUg2dqsUF+cTe4QjWvj/NIBHJoGksOiqndKQuI9yzn2hB0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
