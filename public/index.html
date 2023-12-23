@@ -7,9 +7,25 @@
     <title>Live Tinder</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Pixelify+Sans&display=swap" rel="stylesheet">
   <body>
     <main>
-      <div class="profile myProfile">
+      <h1 class="hidden title waiting playing match noMatch">Live Tinder</h1>
+      <div class="status"></div>
+      <div class="intro">
+        <h2 class="title">Live Tinder</h2>
+        <p>Wat als je zou kunnen zien hoe lang iemand nadenkt over zijn/haar/hun Tinder account? En vanaf welk moment haakt iemand af? Ontdek het tijdens het Live Tinderen ✨  </p>
+        <div class="start">
+          <div>Start</div>
+        </div>
+      </div>
+      <div class="peerSelect__wrapper hidden waiting">
+        <label for="peerSelect">Peer: </label><select id="peerSelect"></select>
+      </div>
+      <div class="profiles__wrapper waiting playing match noMatch">
+      <div class="profile myProfile waiting playing match">
         <video class="blur" id="myCamera" playsinline autoplay muted></video>
         <section>
           <div class="name-age">
@@ -37,87 +53,74 @@
         </section>
         <section>
           <h2>Talen:</h2>
-          <div class="tags">
-            <div class="tag">Nederlands</div>
-            <div class="tag">Frans</div>
-            <div class="tag">Spaans</div>
-            <div class="tag">Engels</div>
-            <div class="tag">Arabisch</div>
+          <div id="languages" class="tags">
           </div>
         </section>
         <section>
           <h2>Interesses:</h2>
-          <div class="tags">
-            <div class="tag">Sport</div>
-            <div class="tag">Theater</div>
-            <div class="tag">Kunst</div>
-            <div class="tag">...</div>
+          <div id="interests" class="tags">
+
           </div>
         </section>
         <section>
           <h2>Meer over mij:</h2>
-          <div class="tags">
-            <div class="tag">Emphatisch</div>
-            <div class="tag">Creatief</div>
-            <div class="tag">Waterman</div>
-            <div class="tag">...</div>
+          <div id="moreAboutMe" class="tags">
           </div>
         </section>
       </div>
-      <div class="peerSelect">
-        <label for="peerSelect">Peer: </label><select id="peerSelect"></select>
+      <div class="matchInfo hidden playing match noMatch">
+        <div class="buttons__wrapper playing">
+          <button id="like"><img src="./assets/like.svg" alt="" width="50px" /></button>
+          <button id="dislike"><img src="./assets/dislike.svg" alt="" width="50px" /></button>
+        </div>
+        <p class="message"></p>
       </div>
-      <div class="profile otherProfile">
+      
+      
+      <div class="profile otherProfile hidden playing match">
         <video class="blur" id="otherCamera" playsinline autoplay muted></video>
         <section>
-          <input class="name" type="text" placeholder="Naam" name="name"/>
+          <div class="name-age">
+            <input disabled class="name" type="text" placeholder="Naam" name="name"/>
+            <input disabled class="age" type="text" placeholder="Age" name="age"/>
+          </div>
           <div class="input-icon">
             <div class="icon"><img src="./assets/ruler.png" alt="" width="25px" /></div>
-            <input type="text" placeholder="Lengte" name="length"/>
+            <input disabled type="text" placeholder="Lengte" name="length"/>
           </div>
           <div class="input-icon">
             <div class="icon"><img src="./assets/study.png" alt="" width="22px" /></div>
   
-            <input type="text" placeholder="School" name="school"/>
+            <input disabled type="text" placeholder="School" name="school"/>
           </div>
           <div class="input-icon">
             <div class="icon"><img src="./assets/location.png" alt="" width="15px" /></div>
-            <input type="text" placeholder="Locatie" name="location"/>
+            <input disabled type="text" placeholder="Locatie" name="location"/>
           </div>
         </section>
         <section>
           <h2>Over mij</h2>
-          <input type="text" placeholder="Bio" name="bio">
+          <input disabled type="text" placeholder="Bio" name="bio">
         </section>
         <section>
           <h2>Talen:</h2>
-          <div class="tags">
-            <div class="tag">Nederlands</div>
-            <div class="tag">Frans</div>
-            <div class="tag">Spaans</div>
-            <div class="tag">Engels</div>
-            <div class="tag">Arabisch</div>
+          <div id="languages" class="tags">
           </div>
         </section>
         <section>
           <h2>Interesses:</h2>
-          <div class="tags">
-            <div class="tag">Sport</div>
-            <div class="tag">Theater</div>
-            <div class="tag">Kunst</div>
-            <div class="tag">...</div>
+          <div id="interests" class="tags">
           </div>
         </section>
         <section>
           <h2>Meer over mij:</h2>
-          <div class="tags">
-            <div class="tag">Emphatisch</div>
-            <div class="tag">Creatief</div>
-            <div class="tag">Waterman</div>
-            <div class="tag">...</div>
+          <div id="moreAboutMe" class="tags">
           </div>
         </section>
       </div>
+      
+    </div>
+    <div class="reset hidden waiting playing match noMatch">Back to start</div>
     </main>
     
 

@@ -26,12 +26,12 @@ const io = new Server(server);
 
 const clients = {};
 io.on('connection', socket => {
-  clients[socket.id] = { id: socket.id };
+  clients[socket.id] = { id: socket.id};
   console.log('Socket connected', socket.id);
 
-  socket.on('draw', (data) => {
+/*   socket.on('draw', (data) => {
     socket.broadcast.emit('draw', data);
-  });
+  }); */
 
   socket.on('signal', (peerId, signal) => {
     console.log(`Received signal from ${socket.id} to ${peerId}`);
@@ -45,14 +45,36 @@ io.on('connection', socket => {
     io.emit('clients', clients);
   });
 
+  socket.on('delete', peerId => {
+    delete clients[peerId];
+    delete clients[socket.id];
+    io.emit('clients', clients);
+  })
+  
+
   socket.on('tag' , (data) => {
-    socket.broadcast.emit('tag', data);
+    io.to(data.peerId).emit('tag', data.tag);
   });
 
   socket.on('input', (data) => {
-    socket.broadcast.emit('input', data);
+    io.to(data.peerId).emit('input', data);
   });
 
+  socket.on('match', (data) => {
+    io.to(data.peerId).emit('match', data.buttonId);
+  });
+
+  socket.on('lockProfile', (peerId) => {
+    io.to(peerId).emit('lockProfile');
+  });
+
+  socket.on('updateClients', (data) => {
+    clients[data.id1].waiting = false;
+    clients[data.id2].waiting = false;
+    io.emit('clients', clients);
+  });
+
+  
   io.emit('clients', clients);
   io.emit('client-connection', clients[socket.id]);
 
@@ -63,7 +85,4 @@ io.on('connection', socket => {
 server.listen(port, () => {
   console.log(`App listening on port ${port}!`);
 
-  setInterval(() => {
-    io.sockets.emit('update', clients);
-  }, 100);
 });
