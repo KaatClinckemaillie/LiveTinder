@@ -29,6 +29,10 @@ html {
     background: -webkit-linear-gradient(45deg, #fd297b, #ff5864, #ff655b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+
+
+
   }
   button{
     border: none;
@@ -74,6 +78,7 @@ html {
     padding: .2rem .5rem;
     border-radius: 2rem;
     margin: 0.2rem 0.1rem;
+    font-size: .8rem;
   }
 
   .active {
@@ -200,9 +205,15 @@ html {
   }
 
   .peerSelect__wrapper {
-    display: block;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 1rem;
+  }
+
+  .peerSelect__wrapper > select {
+    margin-top: .8rem;
+    margin-bottom: 2rem;
   }
 
   
