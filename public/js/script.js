@@ -39,10 +39,11 @@
   const $peerSelect = document.getElementById("peerSelect");
   let ownTags;
   const ownInputs = document.querySelectorAll(".myProfile input");
+  const ownTextarea = document.querySelector(".myProfile textarea");
 
   let otherTags;
   const otherInputs = document.querySelectorAll(".otherProfile input");
-
+  const otherTextarea = document.querySelector(".otherProfile textarea");
 
   const buttons = document.querySelectorAll("button");
   const $buttonsWrapper = document.querySelector(".buttons__wrapper");
@@ -116,6 +117,16 @@
       });
     });
 
+
+    ownTextarea.addEventListener("input", () => {
+      if (state === "playing") {
+        socket.emit("input", {
+          input: ownTextarea.value,
+          peerId: peer.data.id,
+        });
+      }
+    });
+
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         socket.emit("match", { buttonId: button.id, peerId: peer.data.id });
@@ -183,8 +194,12 @@
 
     socket.on("input", (data) => {
       otherInputs.forEach((input) => {
-        if (input.name === data.name) {
-          input.value = data.input;
+        if(data.name){
+          if (input.name === data.name) {
+            input.value = data.input;
+          }
+        }else{
+          otherTextarea.value = data.input;
         }
       });
     });

@@ -30,9 +30,6 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2rem;
-
-
-
   }
   button{
     border: none;
@@ -216,6 +213,10 @@ html {
     margin-bottom: 2rem;
   }
 
+  textarea {
+    outline: none;
+    border: none;
+  }
   
 
   .status {
@@ -246,6 +247,11 @@ html {
   .buttons__wrapper {
     display: flex;
     justify-content: space-between;
+  }
+
+  .matchInfo {
+    display: block;
+    margin: auto;
   }
 
   .hidden{
